@@ -15,7 +15,7 @@ public class Product {
         // Добавляем товар в цикле
         while (true) {
             System.out.println("Введите название товара");
-            name = scanner.nextLine();
+            name = scanner.next(); //было scanner.nextLine
             nameList += "\n" + name;
             System.out.println("Введите цену товара в формате: рубли.копейки");
             while (true) {
