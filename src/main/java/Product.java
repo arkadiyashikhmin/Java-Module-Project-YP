@@ -12,10 +12,18 @@ public class Product {
 
     public static void calculate() {
 
-        // Добавляем товар в цикле
+        // Добавляем товара в цикле
         while (true) {
-            System.out.println("Введите название товара");
-            name = scanner.next(); //было scanner.nextLine
+            while (true) {
+                System.out.println("Введите название товара");
+                name = scanner.nextLine().trim(); //убираем лишние пробелы
+                if (name.isEmpty()) { // проверяем на пустое введенное значение
+                    System.out.println("Вы ввели пустое название товара");
+                } else {
+                    //System.out.println("Введено не пустое имя name = " + name + " .Идем дальше");
+                    break;
+                }
+            }
             nameList += "\n" + name;
             System.out.println("Введите цену товара в формате: рубли.копейки");
             while (true) {
